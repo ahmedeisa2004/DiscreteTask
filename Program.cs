@@ -4,36 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project_1
+namespace Project_2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int num, i, ctr, n1, n2;
-            Console.Write("enter the first number: ");
+            int n, i, sum;
+            int n1, n2;
+            Console.Write("Enter The First Number : ");
             n1 = int.Parse(Console.ReadLine());
-            Console.Write("enter the second number: ");
+            Console.Write("Enter The Second Number : ");
             n2 = int.Parse(Console.ReadLine());
-            Console.Write("The prime numbers between {0} and {1} are : \n", n1, n2);
-
-            for (num = n1; num <= n2; num++)
+            Console.Write("The Perfect numbers between {0} and {1} are : \n",n1,n2);
+            for (n = n1; n <= n2; n++)
             {
-                ctr = 0;
-
-                for (i = 2; i <= num / 2; i++)
+                i = 1;
+                sum = 0;
+                while (i < n)
                 {
-                    if (num % i == 0)
-                    {
-                        ctr++;
-                        break;
-                    }
+                    if (n % i == 0)
+                        sum = sum + i;
+                    i++;
                 }
-
-                if (ctr == 0 && num != 1)
-                    Console.WriteLine("{0} ", num);
+                if (sum == n)
+                    Console.WriteLine("{0} ", n);
             }
-
             Console.ReadLine();
         }
     }
